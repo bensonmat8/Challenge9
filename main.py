@@ -34,7 +34,7 @@ def dwelling_rate(x) -> float:
     result = (y0 * (x1 - x) + y1 * (x - x0)) / (x1 - x0)
     return round(result, 3)
 
-def home_age_rate(age):
+def home_age_rate(age) -> float:
     '''
     Takes the age, queries the 'tbl_Factor_Home_Age' table
     and returns the rating factor
@@ -50,7 +50,7 @@ def home_age_rate(age):
 
     return result.Rating_Factor
 
-def roof_type(roof):
+def roof_type(roof) -> float:
     '''
     Takes the roof type, queries the 'tbl_Factor_Roof_Type' table
     and returns the rating factor
@@ -58,7 +58,7 @@ def roof_type(roof):
     result = Roof.query.get(roof)
     return result.Rating_Factor
 
-def num_units(units):
+def num_units(units) -> float:
     '''
     Takes the number of units, queries the 'tbl_Factor_Num_Units'
     table and returns the rating factor
@@ -66,7 +66,7 @@ def num_units(units):
     result = NumUnits.query.get(units)
     return result.Rating_Factor
 
-def prem_quotes(j_text):
+def prem_quotes(j_text) -> float:
     '''
     Considers the base rate and all the other factors and
     returns the premium rate rounded to two decimals.
